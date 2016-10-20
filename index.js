@@ -31,25 +31,13 @@ function humiditySensorAccessory (log, config) {
     }.bind(this))
   }.bind(this))
 
-  // this.dsAPI = config['deep sleep API'] || ''
-  // this.dsMethod = config['deep sleep method'] || 'GET'
-  // this.dsTimeout = config['deep sleep request timeout'] || this.timeout
-  // this.dsSchedule = config['deep sleep schedule'] || '*/1 * * * *'
-  // this.dsTime = config['deep sleep time'] || 50
-
   this.humiditySensorService = new Service.HumiditySensor(this.name)
 
-  this.log('[humidity SENSOR SETTINGS]')
+  this.log('[HUMIDITY SENSOR SETTINGS]')
   this.log('url                    : ' + this.url)
   this.log('method                 : ' + this.method)
   this.log('request timeout(msec)  : ' + this.timeout)
   this.log('schedule               : ' + this.schedule)
-  // this.log('[DEEP SLEEP SETTINGS]')
-  // this.log('url            : ' + this.dsAPI)
-  // this.log('method         : ' + this.dsMethod)
-  // this.log('timeout(msec)  : ' + this.dsTimeout)
-  // this.log('schedule       : ' + this.dsSchedule)
-  // this.log('sleepTime(sec) : ' + this.dsTime)
 }
 
 humiditySensorAccessory.prototype = {
