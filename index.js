@@ -16,7 +16,7 @@ function humiditySensorAccessory (log, config) {
   this.timeout = config['timeout'] || 10000
   this.schedule = config['polling schedule'] || '*/1 * * * *'
   this.pollingJob = schedule.scheduleJob(this.schedule, function () {
-    // 温度取得処理
+    // 湿度取得処理
     this.httpRequest(this.url, this.method, this.timeout, function (error, response, body) {
       let bodyJson = JSON.parse(body)
       if (error || bodyJson['error']) {
@@ -71,7 +71,7 @@ humiditySensorAccessory.prototype = {
 
   getState: function (callback) {
     this.log('get humidity...')
-    // 温度取得処理
+    // 湿度取得処理
     this.httpRequest(this.url, this.method, this.timeout, (error, response, body) => {
       let bodyJson = JSON.parse(body)
       if (error || bodyJson['error']) {
